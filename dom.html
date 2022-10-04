@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        THE TITLE OF YOUR WEBPAGE
+    </h1>
+    <div id="container">
+
+    </div>
+</body>
+<script>
+    const container = document.querySelector('#container');
+
+    const p = document.createElement('p');
+    p.style.color = "red";
+    p.textContent = "Hey I’m red!";
+
+    const h3 = document.createElement('h3');
+    h3.style.color = "blue";
+    h3.textContent = "I’m a blue h3!";
+
+    container.appendChild(p);
+    container.appendChild(h3);
+
+
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.style.cssText = 'border: solid; border-inline-color: black; background: pink;';
+
+    const h1 = document.createElement('h1');
+    h1.textContent = "I’m in a div";
+    const p2 = document.createElement('p');
+    p2.textContent = "ME TOO!";
+    content.appendChild(h1);
+    content.appendChild(p2);
+
+    container.appendChild(content);
+
+</script>
+
+</html>

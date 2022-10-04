@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let gameChoices = ["rock", "paper", "scissors"]
+
+        function getComputerChoice() {
+            let randChoice = gameChoices[Math.floor(Math.random()*gameChoices.length)];
+            return randChoice;
+        }
+
+        
+        
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection === computerSelection) {
+                return "tie";
+            } else if (computerSelection === "paper" && playerSelection === "rock" || computerSelection === "rock" && playerSelection == "scissors" || computerSelection === "scissors" && playerSelection === "paper") {
+                return "computer won";
+            } else {
+                return "you won!";
+            }
+        }
+
+        const playerSelection = prompt("Choose rock, paper, or scissors");
+        const computerSelection = getComputerChoice();
+
+
+        console.log("Computer: ", computerSelection);
+        console.log("Player: ", playerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <button id="1">Click Me</button>
+        <button id="2">Click Me</button>
+        <button id="3">Click Me</button>
+    </div>
+</body>
+<script>
+    const buttons = document.querySelectorAll('button');
+
+    // we use the .forEach method to iterate through each button
+    buttons.forEach((button) => {
+
+        // and for each one we add a 'click' listener
+        button.addEventListener('click', () => {
+            alert(button.id);
+        });
+    });
+</script>
+
+</html>
