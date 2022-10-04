@@ -9,29 +9,30 @@
 </head>
 
 <body>
-    <script>
+    
+</body>
+<script>
 
-        function game() {
-            let computerScore = 0;
-            let playerScore = 0;
+    function game() {
+        let computerScore = 0;
+        let playerScore = 0;
 
-            for (let i = 1; i <= 5; i++) {
-                let currentRound = i;
+        for (let i = 1; i <= 5; i++) {
+            let currentRound = i;
 
-                let gameChoices = ["rock", "paper", "scissors"]
-                const playerSelection = "rock";
-                const computerSelection = getComputerChoice();
+            let gameChoices = ["rock", "paper", "scissors"]
+            const playerSelection = prompt("Choose rock, paper, or scissors: ");
+            const computerSelection = getComputerChoice();
 
-                function getComputerChoice() {
-                    let randChoice = gameChoices[Math.floor(Math.random() * gameChoices.length)];
-                    return randChoice;
-                }
+            function getComputerChoice() {
+                let randChoice = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+                return randChoice;
+            }
 
-                function playRound(playerSelection, computerSelection) {
-
+            function playRound(playerSelection, computerSelection) {
                     if (playerSelection === computerSelection) {
                         return "tie";
-                    } else if (computerSelection === "paper" && playerSelection === "rock" || computerSelection === "rock" && playerSelection == "scissors" || computerSelection === "scissors" && playerSelection === "paper") {
+                    } else if (computerSelection === "paper" && playerSelection === "rock" || computerSelection === "rock" && playerSelection == "scissors" || computerSelection === "scissors" && playerSelection === "paper" || playerSelection === null) {
                         computerScore++;
                         return "computer won";
                     } else {
@@ -39,31 +40,30 @@
                         return "you won!";
                     }
                 }
+            
 
-                console.log(currentRound)
-                console.log("Computer Score: ", computerScore);
-                console.log("Player Score: ", playerScore);
-                console.log("Computer: ", computerSelection);
-                console.log("Player: ", playerSelection);
-                console.log(playRound(playerSelection, computerSelection));
-            }
-
-            while (currentRound = 5) {
-                if (computerScore < playerScore) {
-                    return "Player wins!";
-                } else if (computerScore === playerScore) {
-                    return "It's a tie :(";
-                } else {
-                    return "Computer wins!";
-                }
-            }
-
-
+            console.log(currentRound)
+            console.log("Computer Score: ", computerScore);
+            console.log("Player Score: ", playerScore);
+            console.log("Computer: ", computerSelection);
+            console.log("Player: ", playerSelection);
+            console.log(playRound(playerSelection, computerSelection));
         }
 
-        console.log(game());
+        while (currentRound = 5) {
+            if (computerScore < playerScore) {
+                return "Player wins game!";
+            } else if (computerScore === playerScore) {
+                return "It's a tie game :(";
+            } else {
+                return "Computer wins game!";
+            }
+        }
 
-    </script>
-</body>
 
+    }
+
+    console.log(game());
+
+</script>
 </html>
