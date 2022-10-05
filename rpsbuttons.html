@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+</body>
+<script>
+
+    const buttons = document.querySelectorAll('button');
+    let computerScore = 0;
+    let playerScore = 0;
+    let gameChoices = ["rock", "paper", "scissors"]
+    let playerSelection;
+    let computerSelection;
+
+    function getComputerChoice() {
+        let randChoice = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+        return randChoice;
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        if (playerSelection === computerSelection) {
+            roundWinner.textContent = "Tie!";
+            return;
+        } else if (computerSelection === "paper" && playerSelection === "rock" || computerSelection === "rock" && playerSelection == "scissors" || computerSelection === "scissors" && playerSelection === "paper" || playerSelection === null) {
+            computerScore = ++computerScore;
+            if (computerScore === 5) {
+                winner.textContent = "Game Over. Computer Wins!";
+            } else {
+                roundWinner.textContent = "Computer wins round";
+                return;
+            };
+        } else if (computerSelection === "rock" && playerSelection === "paper" || computerSelection === "scissors" && playerSelection == "rock" || computerSelection === "paper" && playerSelection === "scissors") {
+            playerScore = ++playerScore;
+            if (playerScore === 5) {
+                winner.textContent = "Game Over. Player wins!";
+            } else {
+                roundWinner.textContent = "Player wins round";
+                return;
+            }
+        }
+    }
+
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (playerScore < 5 && computerScore < 5) {
+                computerSelection = getComputerChoice();
+                playerSelection = button.id;
+                console.log("Player: ", playerSelection);
+                console.log("Computer: ", computerSelection);
+
+                playRound(playerSelection, computerSelection);
+                console.log("Player score: ", playerScore);
+                console.log("Computer score: ", computerScore);
+                player.textContent = `Player score: ${playerScore}`;
+                computer.textContent = `Computer score: ${computerScore}`;
+            } else {
+                return false;
+            }
+
+        });
+    });
+
+
+
+    const container = document.querySelector('#container');
+    const player = document.createElement('p');
+    const computer = document.createElement('p');
+    const winner = document.createElement('h2');
+    const roundWinner = document.createElement('h4');
+
+    container.append(roundWinner, player, computer, winner);
+
+
+
+
+
+</script>
+
+</html>
