@@ -1,0 +1,25 @@
+.grid-container {
+    display: grid;
+    width: 960px;
+    height: 960px;
+    gap: 1px;
+}
+
+.grid-item {
+    background-color: cadetblue;
+    
+}
+
+.grid-item-hover {
+    background-color: red !important;
+}
+
+
+
+
+button {
+    width: fit-content;
+    height: 30px;
+    background-color: coral;
+    margin: 5px;
+}
