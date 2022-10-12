@@ -1,0 +1,8 @@
+form {
+    display: grid;
+    width: 50%;
+}
+
+button {
+    width: fit-content;
+}
