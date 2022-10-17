@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+}
+
+#tab-div {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100px;
+    height: max-content;
+    cursor: pointer;
+}
+
+#content {
+    background-color: rgb(182, 182, 182);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    width: 30vh;
+}
+
+#main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homeDiv {
+    
+}
+
+.menuDiv {
+    
+}
+
+.contactDiv {
+    
+}

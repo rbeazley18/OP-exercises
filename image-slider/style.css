@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+
+.container {
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery {
+    width: 50vh;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.next {
+    
+}
+
+.prev {
+    
+}
+
+img {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+img.show {
+    display: flex;
+}
